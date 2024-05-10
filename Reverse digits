@@ -1,0 +1,19 @@
+class Solution
+{
+	public:
+		long long int reverse_digit(long long int n)
+		{
+		    // Code here
+		    if (n == 0) {
+            return 0;
+        }
+        std::string strNum = std::to_string(n);
+        std::string reversedNum;
+        for (int i = strNum.size() - 1; i >= 0; --i) {
+            if (strNum[i] != '0' || !reversedNum.empty()) {
+                reversedNum += strNum[i];
+            }
+        }
+        return std::stoll(reversedNum);
+		}
+};
