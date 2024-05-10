@@ -1,0 +1,18 @@
+class Solution {
+  public:
+    string armstrongNumber(int n){
+        // code here
+        std::string strNum = std::to_string(n);
+        int numDigits = strNum.length();
+        int sum = 0;
+        for (char digit : strNum) {
+            int d = digit - '0'; 
+            sum += std::pow(d, numDigits);
+        }
+        if (sum == n) {
+            return "Yes";
+        } else {
+            return "No";
+        }
+    }
+};
